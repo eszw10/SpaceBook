@@ -6,7 +6,7 @@ import time from '../../../assets/icons/time.svg'
 const Section3 = () => {
   return (
     <section className='container mx-auto md:h-[90vh] mt-20 md:mt-0'>
-        <h1 className='font-medium text-3xl text-center'>Our service</h1>
+        <h1 className='font-semibold text-3xl text-center'>Our service</h1>
         <div className="services flex flex-col md:flex-row items-center justify-between md:justify-around mt-[108px] gap-20 md:gap-0">
             <div className="service flex flex-col items-center justify-center text-center w-[309px] gap-4">
                 <img src={booking} alt="" />

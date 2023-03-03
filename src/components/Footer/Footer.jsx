@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
         <div className="hidden md:flex">
             <div className="foot flex flex-col gap-5 bg-primary py-8 w-1/2 pl-6 text-white">
-                <Link to={'/'}><img src={logo} alt="logo" className='h-[60px]' width={170} /></Link>
+                <Link to={'/'} className='relative -left-[10px]'><img src={logo} alt="logo" className='h-[60px] ' width={170} /></Link>
                 <p className='w-[70%] text-xl'>
                     Kerja jadi lebih mudah dan nyaman, booking gaperlu ribet lagi
                 </p>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="service flex justify-evenly items-center w-full">
+            <div className="bg-[#f3f3f3] service flex justify-evenly items-center w-full">
                 <div className="layanans flex justify-evenly w-full items-center">
                     <div className="layanan self-start">
                         <h2 className='font-bold text-2xl'>Tentang</h2>

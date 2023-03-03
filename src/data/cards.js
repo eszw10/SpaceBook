@@ -4,6 +4,7 @@ import wp3 from '../assets/images/wp3.png'
 
 const cards = [
     {
+        id:1,
         image : wp1,
         name:'Alfath Working Space',
         price:'Rp.50rb - 150rb/h',
@@ -13,6 +14,7 @@ const cards = [
     },
     
     {
+        id:2,
         image : wp2,
         name:'EZO Working Space',
         price:'Rp.50rb - 150rb/h',
@@ -22,6 +24,7 @@ const cards = [
     },
     
     {
+        id:3,
         image : wp3,
         name:'Ruang Milennial',
         price:'Rp.50rb - 150rb/h',

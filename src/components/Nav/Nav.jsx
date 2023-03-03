@@ -7,7 +7,7 @@ import './Nav.css'
 const Nav = () => {
   const navigate = useNavigate();
   return (
-    <nav className='flex px-12 py-5 items-center justify-between sticky top-0 bg-white'>
+    <nav className='flex px-12 py-5 items-center justify-between sticky top-0 bg-white z-20'>
         <Link to={'/'}><img src={logo} alt="logo" className='h-[60px]'/></Link>
         <label htmlFor="burgir"><i className="fa-solid fa-bars lg:hidden text-secondary text-3xl hover:cursor-pointer"></i></label>
         <input type="checkbox" name="" id="burgir" className='hidden peer'/>
@@ -22,7 +22,7 @@ const Nav = () => {
         </ul>
         <div className="hidden lg:flex gap-3 items-center justify-center">
           <Link to={'/login'}><button type='button' className='btn-orange w-[120px]'>Masuk</button></Link> 
-          <Link to={'/signUp'}><button type='button'className='border-[1px] border-secondary rounded-xl px-4 w py-[10px] w-[120px] text-secondary font-semibold'>Daftar</button></Link> 
+          <Link to={'/signUp'}><button type='button'className='btn-orange-outline w-[120px]'>Daftar</button></Link> 
         </div>
     </nav>
   )
