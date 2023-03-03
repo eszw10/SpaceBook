@@ -14,4 +14,14 @@ body {
   margin: 0;
 }
 
+@layer components {
+  .btn-orange {
+    @apply text-white bg-secondary px-4 rounded-xl py-[10px] hover:bg-secondary-h font-semibold;
+  };
+
+  .navResponsive {
+    @apply z-10 left-0 bg-white text-2xl opacity-100;
+  }
+}
+
 
