@@ -13,13 +13,13 @@ const Login = () => {
 
   const handleLogin = (e)=> {
     e.preventDefault();
-    axios.post('localhost:8080/login', {
+    axios.post('localhost:8080/login/', {
       "email" : "arvin555@gmail.com",
       "password" : "ujicoba"
     })
     .then(res=>{
       console.log(res)
-      window.localStorage.setItem('token',res.data.token.token)
+      window.localStorage.setItem('token', res.data.token.token)
     }).catch(err=> console.log(err));
   }
 
