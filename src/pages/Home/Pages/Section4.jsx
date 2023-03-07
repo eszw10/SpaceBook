@@ -1,14 +1,16 @@
 import React from 'react'
-import kursi from '../../../assets/images/kursi.png'
+import tentang from '../../../assets/images/tentang.png'
+import logo from '../../../assets/icons/logo2.svg'
 
 const Section4 = () => {
   return (
-    <section className='container lg:h-[70vh] mt-20 md:mt-0'>
-        <div className="content container mx-auto  flex items-center justify-end relative lg:pr-[133px]">
-            <img src={kursi} alt="" className='absolute left-4 lg:left-[143px] -top-6 lg:-top-[105px] w-[170px] lg:w-[500px] lg:h-[500px]'/>
-            <div className="typography text-white bg-primary lg:rounded-[10px] md:pt-[71px] md:pl-[220px] md:pb-[137px] lg:w-[70%] pl-48 pr-5 flex flex-col pb-7 pt-7 gap-3">
-                <h2 className='font-semibold text-sm md:text-xl lg:text-4xl lg:w-10/12'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida ipsum eget </h2>
-                <p className='lg:text-xl lg:w-[70%] text-xs'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida ipsum eget</p>
+    <section className='mt-20 md:mt-0 md:h-[70vh]'>
+        <div className="container md:mx-auto bg-primary md:rounded-[10px] flex items-center justify-between w-full md:w-[80%] gap-16 md:px-0 md:py-0 py-5 px-9 text-center md:text-left">
+            <img src={tentang} alt="" className='hidden md:block'/>
+            <div className="typography text-white flex flex-col md:gap-8 gap-4 justify-evenly lg:items-start items-center lg:w-[90%]">
+              <img src={logo} className="hidden md:block md:w-[170px]" />
+              <h2 className='font-semibold text-lg md:text-xl lg:text-4xl lg:w-10/12'>Apa itu SpaceBook</h2>
+              <p className='lg:text-xl lg:w-[80%] text-sm'>SpaceBook adalah platform yang menyediakan informasi lengkap mengenai Coworking Space dan membantu pengguna untuk memesan tempat lebih cepat</p>
             </div>
         </div>
     </section>

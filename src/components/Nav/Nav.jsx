@@ -17,9 +17,9 @@ const Nav = () => {
             <li className='font-medium hover-underline-animation'> <Link to={'/login'}>Tambah Tempat</Link></li>
             <div className="lg:hidden gap-3 items-center flex flex-col">
               <button onClick={()=>navigate('/login')} type='button' className='btn-orange w-[250px]'>Masuk</button> 
-              <button onClick={()=>navigate('/signUp')} type='button'className='border-[1px] border-secondary rounded-xl px-4 py-[10px] text-secondary w-[250px] font-semibold'>Daftar</button> 
+              <button onClick={()=>navigate('/signUp')} type='button'className='btn-orange-outline w-[250px]'>Daftar</button> 
             </div>
-        </ul>
+        </ul>                                                                                                                                                                 
         <div className="hidden lg:flex gap-3 items-center justify-center">
           <Link to={'/login'}><button type='button' className='btn-orange w-[120px]'>Masuk</button></Link> 
           <Link to={'/signUp'}><button type='button'className='btn-orange-outline w-[120px]'>Daftar</button></Link> 

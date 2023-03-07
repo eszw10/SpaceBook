@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="hidden md:flex">
             <div className="foot flex flex-col gap-5 bg-primary py-8 w-1/2 pl-6 text-white">
                 <Link to={'/'} className='relative -left-[10px]'><img src={logo} alt="logo" className='h-[60px] ' width={170} /></Link>
-                <p className='w-[70%] text-xl'>
+                <p className='w-[80%] text-xl'>
                     Kerja jadi lebih mudah dan nyaman, booking gaperlu ribet lagi
                 </p>
                 <div className="followUs flex items-center gap-8 md:flex-col md:items-start lg:flex-row">

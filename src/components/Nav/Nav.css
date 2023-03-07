@@ -11,12 +11,16 @@
     height: 2.5px;
     bottom: 0;
     left: 0;
-    background-color: #0072c6;
+    background-color: #ff731d;
     transform-origin: bottom right;
     transition: transform 0.5s ease-out;
     border-radius: 5px;
   }
   
+  .hover-underline-animation:hover {
+    color: #0067b2;
+  }
+
   .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;

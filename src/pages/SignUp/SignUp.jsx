@@ -29,7 +29,7 @@ const SignUp = () => {
     <div className="container flex  min-w-full">
         <div className="form-container flex flex-col items-center justify-center w-full md:w-1/2 h-screen relative">
             <img onClick={()=>navigate('/')} src={logo} alt="spacebook-logo" className='self-start ml-11 absolute top-0 mt-7 w-[100px] lg:w-[130px] md:w-[90px] hover:cursor-pointer'/>
-            <div className="welcome flex flex-col w-1/2 mt-16">
+            <div className="welcome flex flex-col w-1/2 mt-16 gap-2">
                 <h2 className='font-semibold text-2xl md:text-4xl'>Selamat Datang!</h2>
                 <p className='text-[#858585] mb-4 text-sm'>Ayo mulai mencari working space terbaik</p>
             </div>
@@ -43,21 +43,21 @@ const SignUp = () => {
                   <input onClick={()=>setSeen(!seen)} type={seen === false? 'password':'text'} className='w-[90%] outline-none' required minLength={8} placeholder='Minimal 8 karakter'
                   onChange={e=>setPassword(e.target.value)}
                   />
-                  <i onClick={()=>setSeen(!seen)} className= {`${seen===false?'fa-regular fa-eye':'fa-solid fa-eye-slash'} hover:cursor-pointer`}></i>
+                  <i onClick={()=>setSeen(!seen)} className= {`${seen===false?'fa-regular fa-eye-slash':'fa-regular fa-eye'} hover:cursor-pointer`}></i>
                 </div>
                 <h2 className='font-semibold text-xl md:text-2xl'>Konfirmasi Password<span className='text-red-500'>*</span></h2>
                 <div className="input btn-email flex justify-between items-center">
                   <input onClick={()=>setKonfirmasi(!konfirmasi)} type={konfirmasi === false? 'password':'text'} className='w-[90%] outline-none' required minLength={8} placeholder='Minimal 8 karakter'
                   onChange={e=>setConfirmPassword(e.target.value)}
                   />
-                  <i onClick={()=>setKonfirmasi(!konfirmasi)} className= {`${konfirmasi===false?'fa-regular fa-eye':'fa-solid fa-eye-slash'} hover:cursor-pointer`}></i>
+                  <i onClick={()=>setKonfirmasi(!konfirmasi)} className= {`${konfirmasi===false?'fa-regular fa-eye-slash':'fa-regular fa-eye'} hover:cursor-pointer`}></i>
                 </div>
-                <button type='submit' className='btn text-2xl bg-primary hover:bg-primary-h text-white font-semibold w-[80%] mt-5 self-center'>Daftar</button>
+                <button type='submit' className='btn-orange text-xl font-semibold w-[80%] self-center mt-5'>Daftar</button>
                 <p className='self-center text-center md:text-left'>Anda sudah punya akun? <Link className='font-bold' to={'/login'}>Masuk</Link></p>
             </form>
         </div>
         <div className="img-container w-1/2 bg-primary h-screen hidden md:flex items-center justify-center">
-          <div className="img-container bg-primary-lact w-[80%] h-[92%] rounded-[40px] relative">
+          <div className="img-container bg-white/40 w-[80%] h-[92%] rounded-[40px] relative">
             <h1 className='text-[56px] font-semibold text-white ml-7 mt-10'>Yuk Reservasi Sekarang!</h1>
             <img src={kerja} alt="" className='w-full absolute bottom-0'/>
           </div>
