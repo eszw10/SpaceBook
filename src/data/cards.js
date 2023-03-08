@@ -1,11 +1,7 @@
-import wp1 from '../assets/images/wp1.png'
-import wp2 from '../assets/images/wp2.png'
-import wp3 from '../assets/images/wp3.png'
-
 const cards = [
     {
         id:1,
-        image : wp1,
+        image : '/assets/images/wp1.png',
         name:'Alfath Working Space',
         price:'Rp.50rb - 150rb/h',
         distance:'0.5 km away',
@@ -15,7 +11,7 @@ const cards = [
     
     {
         id:2,
-        image : wp2,
+        image : '/assets/images/wp2.png',
         name:'EZO Working Space',
         price:'Rp.50rb - 150rb/h',
         distance:'0.5 km away',
@@ -25,7 +21,7 @@ const cards = [
     
     {
         id:3,
-        image : wp3,
+        image : '/assets/images/wp3.png',
         name:'Ruang Milennial',
         price:'Rp.50rb - 150rb/h',
         distance:'0.5 km away',

@@ -1,7 +1,5 @@
 import './Login.css'
-import logo from '../../assets/icons/logo.svg'
 import { useState } from 'react'
-import kerja from '../../assets/images/adminKerja.png'
 import { useNavigate } from 'react-router-dom'
 
 const AdminLogin = () => {
@@ -25,7 +23,7 @@ const AdminLogin = () => {
   return (
     <div className="flex w-full">
         <div className="form-container flex flex-col items-center justify-center w-full lg:w-1/2 h-screen gap-6 relative">
-            <img onClick={()=>navigate('/')} src={logo} alt="spacebook-logo" className='self-start ml-11 absolute top-0 mt-8 w-[130px] hover:cursor-pointer' />
+            <img onClick={()=>navigate('/')} src='/assets/icons/logo.svg' alt="spacebook-logo" className='self-start ml-11 absolute top-0 mt-8 w-[130px] hover:cursor-pointer' />
             <div className="welcome flex flex-col w-1/2">
                 <h2 className='font-semibold text-4xl leading-[54px]'>Selamat datang kembali!</h2>
                 <p className='text-[#858585]'>Mohon isi kembali data anda</p>
@@ -46,7 +44,7 @@ const AdminLogin = () => {
         <div className="img-container w-1/2 bg-primary h-screen hidden lg:flex items-center justify-center">
           <div className="img-container bg-white/40 w-[80%] h-[92%] rounded-[40px] relative overflow-hidden">
             <h1 className='text-[56px] font-semibold text-white ml-7 mt-10'>Pantau terus tempatmu!</h1>
-            <img src={kerja} className='absolute -bottom-4'/>
+            <img src='/assets/images/adminKerja.png' className='absolute -bottom-4'/>
           </div>
         </div>
     </div>

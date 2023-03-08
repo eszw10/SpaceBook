@@ -1,9 +1,3 @@
-import React from 'react'
-import logo from '../../assets/icons/logo2.svg'
-import ig from '../../assets/icons/instagram.svg'
-import In from '../../assets/icons/linkedin.svg'
-import fb from '../../assets/icons/facebook.svg'
-import wa from '../../assets/icons/Whatsapp.svg'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -11,17 +5,17 @@ const Footer = () => {
     <footer>
         <div className="hidden md:flex">
             <div className="foot flex flex-col gap-5 bg-primary py-8 w-1/2 pl-6 text-white">
-                <Link to={'/'} className='relative -left-[10px]'><img src={logo} alt="logo" className='h-[60px] ' width={170} /></Link>
+                <Link to={'/'} className='relative -left-[10px]'><img src='/assets/icons/logo2.svg' alt="logo" className='h-[60px] ' width={170} /></Link>
                 <p className='w-[80%] text-xl'>
                     Kerja jadi lebih mudah dan nyaman, booking gaperlu ribet lagi
                 </p>
                 <div className="followUs flex items-center gap-8 md:flex-col md:items-start lg:flex-row">
                     <h1 className='font-semibold text-2xl'>Follow us</h1>
                     <div className="sosmed flex gap-2">
-                        <img src={ig} alt="" />
-                        <img src={fb} alt="" />
-                        <img src={In} alt="" />
-                        <img src={wa} alt="" />
+                        <img src='/assets/icons/instagram.svg' alt="" />
+                        <img src='/assets/icons/facebook.svg' alt="" />
+                        <img src='/assets/icons/linkedin.svg' alt="" />
+                        <img src='/assets/icons/whatsapp.svg' alt="" />
                     </div>
                 </div>
             </div>

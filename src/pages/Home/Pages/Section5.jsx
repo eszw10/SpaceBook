@@ -1,5 +1,3 @@
-import React from 'react'
-import brazuca from '../../../assets/images/Brazuca.png'
 import '../Home.css'
 
 const Section5 = () => {
@@ -16,7 +14,7 @@ const Section5 = () => {
                     <button className='btn-orange-outline md:w-[30%] text-xs md:text-base'>Detail</button>
                 </div>
             </div>
-            <img src={brazuca} alt="" className='hidden md:block' />
+            <img src='/assets/images/Brazuca.png' alt="" className='hidden md:block' />
         </div>
     </section>
   )

@@ -1,5 +1,3 @@
-import pic from '../../../assets/images/landing.png'
-
 const Section1 = () => {
   return (
     <section className='container mx-auto flex items-center lg:justify-around h-[90vh] gap-5'>
@@ -9,7 +7,7 @@ const Section1 = () => {
             <button type='button' className='lg:self-start btn-orange w-[170px] lg:mt-5'>Cari Tempat</button>
         </div>
         <div className="hidden lg:block img-container">
-            <img src={pic} />
+            <img src='/assets/images/landing.png' />
         </div>
     </section>
   )

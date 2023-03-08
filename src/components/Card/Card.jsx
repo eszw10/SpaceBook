@@ -1,6 +1,5 @@
 import React from 'react'
 import './Card.css'
-import wp1 from '../../assets/images/wp1.png'
 
 const Card = ({data}) => {
   return (
