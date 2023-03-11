@@ -21,7 +21,7 @@ const Card = ({data}) => {
                 <p>{data.count} review</p>
             </div>
         </div>
-        <Link to='/detail' className='self-center'><button type='button'className='w-[200px] btn-orange'>Detail</button></Link>
+        <Link to={window.localStorage.getItem('token')?'/detail':'/login'} className='self-center'><button type='button'className='w-[200px] btn-orange'>Detail</button></Link>
     </div>
   )
 }
