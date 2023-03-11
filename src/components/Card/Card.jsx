@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Card.css'
 
 const Card = ({data}) => {
   return (
-    <div className='card flex flex-col  w-[375px] px-6 py-6 rounded-xl gap-3'>
+    <div className='card flex flex-col  w-[375px] p-6 rounded-xl gap-3'>
         <img src={data.image} alt="" className='w-full' />
         <h3 className='font-semibold text-2xl'>{data.name}</h3>
         <div className="fasil">
@@ -20,7 +21,7 @@ const Card = ({data}) => {
                 <p>{data.count} review</p>
             </div>
         </div>
-        <button type='button'className='self-center w-[200px] btn-orange'>Book</button>
+        <Link to='/detail' className='self-center'><button type='button'className='w-[200px] btn-orange'>Detail</button></Link>
     </div>
   )
 }

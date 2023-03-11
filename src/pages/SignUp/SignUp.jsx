@@ -1,5 +1,7 @@
+import axios from "axios";
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import ApiUrl from "../../config/ApiUrl";
 
 const SignUp = () => {
   const [seen, setSeen] = useState(false);
@@ -12,10 +14,11 @@ const SignUp = () => {
 
   const handleRegister = (e)=> {
     e.preventDefault();
-    axios.post('localhost:8080/register/customer', {
-      "nama" : "Arvin",
-      "email" : "arvin555@gmail.com",
-      "password" : "12345"
+    axios.post(`${ApiUrl()}/register/customer`, {
+      "nama" : name,
+      "email" : email,
+      "password" : password,
+      "konfirmpw" : confirmPassword
     })
     .then(res=>{
       console.log(res)

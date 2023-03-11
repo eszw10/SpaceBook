@@ -1,6 +1,8 @@
 import './Login.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ApiURL from '../../config/ApiUrl'
+import axios from 'axios'
 
 const AdminLogin = () => {
   const [seen, setSeen] = useState(false)
@@ -10,13 +12,13 @@ const AdminLogin = () => {
 
   const handleLogin = (e)=> {
     e.preventDefault();
-    axios.post('localhost:8080/login', {
-      "email" : "owner1@gmail.com",
-      "password" : "123456"
+    axios.post(`${ApiURL()}/login/owner`, {
+      "email" : email,
+      "password" : password
     })
     .then(res=>{
       console.log(res)
-      window.localStorage.setItem('token',res.data.token.token)
+      window.localStorage.setItem('AdminToken',res.data.data.token)
     }).catch(err=> console.log(err));
   }
 
@@ -33,7 +35,7 @@ const AdminLogin = () => {
                 <input type="email" className='btn-email outline-none' required placeholder='ketik emailmu' onChange={e=>setEmail(e.target.value)}/>
                 <h2 className='font-semibold text-2xl'>Password<span className='text-red-500'>*</span></h2>
                 <div className="input btn-email flex justify-between items-center">
-                  <input onClick={()=>setSeen(!seen)} type={seen === false? 'password':'text'} className='w-[90%] outline-none' required minLength={8} placeholder='Minimal 8 karakter'
+                  <input onClick={()=>setSeen(!seen)} type={seen === false? 'password':'text'} className='w-[90%] outline-none' required minLength={6} placeholder='Minimal 8 karakter'
                   onChange={e=>setPassword(e.target.value)}
                   />
                   <i onClick={()=>setSeen(!seen)} className= {`${seen===false?'fa-regular fa-eye-slash':'fa-regular fa-eye'} hover:cursor-pointer`}></i>

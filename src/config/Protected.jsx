@@ -1,10 +1,11 @@
 import { Outlet, Navigate } from "react-router-dom"
 
-const Auth = () => {
-  if(window.localStorage.getItem('token'))
+const Protected = () => {
+  if(window.localStorage.getItem('token')) {
     return <Outlet/>
-
+  } else {
     return <Navigate to='/'/>
+  }
 }
 
-export default Auth
+export default Protected

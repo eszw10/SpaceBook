@@ -1,8 +1,8 @@
 const cards = [
     {
         id:1,
-        image : '/assets/images/wp1.png',
-        name:'Alfath Working Space',
+        image : '/assets/images/wp2.png',
+        name:'EZO Working Space',
         price:'Rp.50rb - 150rb/h',
         distance:'0.5 km away',
         rating:5,
@@ -11,8 +11,8 @@ const cards = [
     
     {
         id:2,
-        image : '/assets/images/wp2.png',
-        name:'EZO Working Space',
+        image : '/assets/images/wp4.png',
+        name:'Ngalup Co',
         price:'Rp.50rb - 150rb/h',
         distance:'0.5 km away',
         rating:5,

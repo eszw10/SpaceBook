@@ -1,8 +1,12 @@
+import { useState } from 'react';
+import Contact from '../../../components/Modal/Contact'
 import '../Home.css'
 
 const Section5 = () => {
+    const [modal,setModal] = useState(false);
+    const modalHandler= () => setModal(!modal)
   return (
-    <section className='md:mt-0 mt-20 mb-20 lg:mb-32 md:h-[50vh] flex'>
+    <section className='md:mt-0 mt-20 mb-20 lg:mb-32 md:h-[50vh] flex relative' id='add'>
         <div className="md:container md:self-center mx-auto bagan flex items-center md:justify-around md:w-[70%] rounded-[20px] p-5 md:p-0 ">
             <div className="content flex flex-col items-center justify-center text-center md:text-left gap-3">
                 <div className="typo">
@@ -10,12 +14,12 @@ const Section5 = () => {
                     <p className='text-xs md:text-base'>Daftarkan coworking spacemu di sini</p>
                 </div>
                 <div className="buttons flex md:w-full gap-3">
-                    <button className='btn-orange md:w-[50%] text-xs md:text-base'>contact Us</button>
-                    <button className='btn-orange-outline md:w-[30%] text-xs md:text-base'>Detail</button>
+                    <button className='btn-orange md:w-[50%] text-xs md:text-base' onClick={modalHandler}>Hubungi kami</button>
                 </div>
             </div>
             <img src='/assets/images/Brazuca.png' alt="" className='hidden md:block' />
         </div>
+        {modal && <Contact handler={modalHandler}/>}
     </section>
   )
 }

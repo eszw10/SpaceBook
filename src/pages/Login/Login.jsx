@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import { useState } from 'react'
+import ApiURL from '../../config/ApiUrl'
 import axios from 'axios'
 
 const Login = () => {
@@ -11,13 +12,14 @@ const Login = () => {
 
   const handleLogin = (e)=> {
     e.preventDefault();
-    axios.post('localhost:8080/login/', {
-      "email" : "arvin555@gmail.com",
-      "password" : "ujicoba"
+    axios.post(`${ApiURL()}/login`, {
+      "email" : email,
+      "password" : password
     })
     .then(res=>{
       console.log(res)
-      window.localStorage.setItem('token', res.data.token.token)
+      window.localStorage.setItem('token', res.data.data.token)
+      navigate('/dashboard')
     }).catch(err=> console.log(err));
   }
 

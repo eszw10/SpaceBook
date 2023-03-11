@@ -12,13 +12,16 @@ module.exports = {
         'primary-lact':'#b0d0e7',
         'secondary':'#ff731d',
         'secondary-h':'#FFEADD',
+        'secondary-lact':'#cc5c17',
+        'grey-lact':'#bfbfbf',
         'grey-l':'#eaeaea',
         'grey':'#303030',
         'grey-h':'#2b2b2b',
-        'success':'#2BAC47',
+        'grey-f':'#F3F3F3',
+        'success':'#159001',
         'success-bg':'#F1F8F2',
         'warning':'#EF8943',
-        'error':'#C83532',
+        'error':'#ED0303',
         'wb':'#FBEFEF'
       }
     },
