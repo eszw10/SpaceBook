@@ -2,7 +2,7 @@ import React from 'react'
 
 const DashAdmin = () => {
   return (
-    <div className='text-black px-32 py-20 flex flex-col gap-7'>
+    <div className='text-black px-32 flex flex-col gap-5 py-16'>
       <div className="name">
         <h2 className='font-semibold text-3xl'>EZO Working Space Malang</h2>
         <p>Salah satu working space ternyaman dan terlengkap di Malang, cocok untuk kerja, diskusi, dan seminar dengan berbagai fasilitas dan makanan</p>

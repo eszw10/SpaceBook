@@ -4,6 +4,7 @@ import AdminAuth from './config/AdminAuth'
 import Auth from './config/Auth'
 import ProtectAdmin from './config/ProtectAdmin'
 import Protected from './config/Protected'
+import DashAdmin from './pages/Admin/DashAdmin'
 import Galeri from './pages/Admin/Galeri'
 import NavAdmin from './pages/Admin/NavAdmin'
 import ScheAdmin from './pages/Admin/ScheAdmin'
@@ -29,15 +30,14 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={ <Login/>}/>
           <Route path='/signUp' element={ <SignUp/>}/>
-          <Route path='/admin/dashboard' element={<NavAdmin/>}></Route>
-          <Route path='/admin/jadwal' element={<ScheAdmin/>}></Route>
-          <Route path='/admin/galeri' element={<Galeri/>}></Route>
         </Route>
         <Route element={<AdminAuth/>}>
           <Route path='/admin' element={ <AdminLogin/>}/>
         </Route>
         <Route element={<ProtectAdmin/>}>
-          
+          <Route path='/admin/dashboard' element={<DashAdmin/>}></Route>
+          <Route path='/admin/jadwal' element={<ScheAdmin/>}></Route>
+          <Route path='/admin/galeri' element={<Galeri/>}></Route>
         </Route>
       </Routes>
     </div>

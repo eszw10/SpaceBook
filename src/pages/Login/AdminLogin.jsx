@@ -19,6 +19,7 @@ const AdminLogin = () => {
     .then(res=>{
       console.log(res)
       window.localStorage.setItem('AdminToken',res.data.data.token)
+      navigate('/admin/dashboard')
     }).catch(err=> console.log(err));
   }
 

@@ -5,7 +5,7 @@ import times from "../../data/times"
 
 const ScheAdmin = () => {
   return (
-    <div className="text-black flex flex-col gap-4">
+    <div className="text-black flex flex-col justify-center gap-4 h-full">
       <div className="buttons flex items-center justify-center gap-3">
         <button className="btn-orange">Coworking Space</button>
         <button className="btn-orange-outline">Meeting Room</button>
@@ -16,7 +16,7 @@ const ScheAdmin = () => {
         <img src="/assets/icons/warning.svg" alt="" />
       </div>
       <form className="flex flex-col gap-5 justify-center items-center">
-          <div className="jadwal grid grid-cols-7 gap-5 w-[50%] h-[50%] bg-slate-40">
+          <div className="jadwal grid grid-cols-7 gap-5 bg-slate-40">
               {dates.map(date=>(
                 <Date data={date} key={date.id}/>
               ))}

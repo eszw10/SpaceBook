@@ -12,7 +12,7 @@ const NavDash = () => {
         <Link to={'/dashboard'}><img src='/assets/icons/logo.svg' alt="logo" className='h-[60px]'/></Link>
         <ul className='absolute opacity-0 lg:opacity-100 top-20 h-[90vh] -left-[400px] transition-all duration-300 lg:static flex lg:flex-row flex-col gap-12 lg:h-full m-0 text-xl peer-checked:navResponsive items-center justify-center w-full'>
             <li className='font-medium hover-underline-animation'><Link to={'/'}>Home</Link></li>
-            <li className='font-medium hover-underline-animation'><Link to={'/cari'}>Cari Tempat</Link></li>
+            <li className='font-medium hover-underline-animation'><a href='#search'>Cari Tempat</a></li>
             <li className='font-medium hover-underline-animation'> <a href='#add'>Tambah Tempat</a></li>
             <div className="lg:hidden gap-3 items-center flex flex-col">
               <button onClick={()=>navigate('/login')} type='button' className='btn-orange w-[250px]'>Masuk</button> 
