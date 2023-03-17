@@ -26,8 +26,8 @@ const NavDash = () => {
         {
           clicked && 
           (<div className="hidden bg-white md:flex detailP absolute right-[20px] flex-col top-24 rounded-[10px] p-3 shadow-2xl w-[200px] z-20">
-            <h2 className='font-semibold'>Admin</h2>
-            <p className=' text-grey'>kel14@gmail.com</p>
+            <h2 className='font-semibold'>User</h2>
+            <p className=' text-grey'>user@gmail.com</p>
             <hr className='border-[1.5px]'/>
             <p className='font-semibold text-secondary hover:cursor-pointer' onClick={logOut}>Keluar</p>
           </div>)  
