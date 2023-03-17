@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Contact = ({handler}) => {
+const ContactUs = ({handler}) => {
   return (
     <div className="fixed z-30 top-0 bg-opacity-30 flex justify-center items-center w-screen h-screen bg-slate-500">
         <div className="bg-white p-6 text-center flex flex-col gap-4 font-medium w-[50%] items-center rounded-xl lg:text-2xl relative">
@@ -14,4 +12,4 @@ const Contact = ({handler}) => {
   )
 }
 
-export default Contact
+export default ContactUs

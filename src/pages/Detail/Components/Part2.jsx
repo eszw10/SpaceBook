@@ -2,23 +2,19 @@ import dates from "../../../data/dates"
 import times from "../../../data/times"
 import Date from "../../../components/Schedule/Date"
 import Time from "../../../components/Schedule/Time"
+import { useState } from "react"
+import Check from "../../../components/Modal/Check"
 
 const Part2 = () => {
+  const [modal,setModal] = useState(false);
+  const modalHandler= (e) => {
+    e.preventDefault();
+    setModal(!modal)
+  }
   return (
-    <section className="flex flex-col justify-center items-center gap-4">
-        <h3 className="text-center font-medium text-3xl">Harga</h3>
-        <div className="booking flex gap-3">
-            <div className="btn-orange-outline w-fit text-center">
-                <p>Coworking Page</p>
-                <p>50.000/jam</p>
-            </div>
-            <div className="btn-orange-outline active:bg-secondary-lact w-fit text-center">
-                <p>Meeting Room</p>
-                <p>50.000/jam</p>
-            </div>
-        </div>
+    <div className="flex flex-col justify-center items-center gap-4 lg:mt-20">
         <form className="flex flex-col gap-5">
-          <div className="jadwal grid grid-cols-7 gap-16">
+          <div className="jadwal md:overflow-hidden grid grid-cols-7 gap-2 md:gap-6 md:gap-x-9">
               {dates.map(date=>(
                 <Date data={date} key={date.id}/>
               ))}
@@ -32,9 +28,10 @@ const Part2 = () => {
               <div className="w-6 h-6 bg-grey-lact rounded-[10px]"></div>
               <p>Tak Tersedia</p>
           </div>
-          <button type="submit" className="self-center btn-orange w-[357px]">Reservasi</button>
+          <button type="submit" className="self-center btn-orange w-[357px]" onClick={modalHandler}>Reservasi</button>
         </form>
-    </section>
+        {modal && <Check handler={modalHandler}/>}
+    </div>
   )
 }
 

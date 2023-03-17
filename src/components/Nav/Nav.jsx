@@ -10,7 +10,7 @@ const Nav = () => {
         <input type="checkbox" name="" id="burgir" className='hidden peer'/>
         <ul className='absolute opacity-0 lg:opacity-100 top-20 h-[90vh] -left-[400px] transition-all duration-300 lg:static flex lg:flex-row flex-col gap-12 lg:h-full m-0 text-xl peer-checked:navResponsive items-center justify-center w-full'>
             <li className='font-medium hover-underline-animation'><Link to={'/'}>Home</Link></li>
-            <li className='font-medium hover-underline-animation'><label htmlFor="log" className='hover:cursor-pointer'>Cari Tempat</label></li>
+            <li className='font-medium hover-underline-animation'><Link to={'/cari'} className='cursor-pointer'>Cari Tempat</Link></li>
             <li className='font-medium hover-underline-animation'><a href='#add'>Tambah Tempat</a></li>
             <div className="lg:hidden gap-3 items-center flex flex-col">
               <button onClick={()=>navigate('/login')} type='button' className='btn-orange w-[250px]'>Masuk</button> 
@@ -20,12 +20,6 @@ const Nav = () => {
         <div className="hidden lg:flex gap-3 items-center justify-center">
           <Link to={'/login'}><button type='button' className='btn-orange w-[120px]'>Masuk</button></Link> 
           <Link to={'/signUp'}><button type='button'className='btn-orange-outline w-[120px]'>Daftar</button></Link> 
-        </div>
-        
-        <input type="checkbox" id='log' className='hidden peer' />
-        <div className="hidden bg-white text-secondary btn-orange-outline peer-checked:flex items-center justify-center absolute top-28 left-[500px] p-4 rounded-[10px] gap-2">
-          <img src="/assets/icons/warning.svg" alt="" className=''/>
-          <p>Silahkan Login terlebih dahulu</p>
         </div>
     </nav>
   )

@@ -1,27 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
 const Card = ({data}) => {
+  const [ratings,SetRatings] = useState([]);
+  useEffect(()=> {
+    const arr = []
+    for(let i = 1;i<data.rating+1;i++) {
+      arr.push(i)
+      SetRatings(arr)
+    }
+  },[ratings])
   return (
     <div className='card flex flex-col  w-[375px] p-6 rounded-xl gap-3'>
-        <img src={data.image} alt="" className='w-full' />
-        <h3 className='font-semibold text-2xl'>{data.name}</h3>
+        <div className="img-container h-[183px] overflow-hidden flex items-center">
+          <img src={data.foto} alt="" className='w-full overflow-hidden' />
+        </div>
+        <h3 className='font-semibold text-2xl'>{data.nama}</h3>
         <div className="fasil">
-            <p>{data.price}</p>
-            <p>{data.distance}</p>
+            <p className='font-semibold'>{data.kategori=='coworking'?'Coworking Space':data.kategori}</p>
+            <p>Rp{data.harga}/h</p>
+            <p>{data.jarak.toFixed(2)} km away</p>
             <div className="rating flex items-center gap-3">
                 <div className="rating">
-                    <i className="fa-solid fa-star text-yellow-400"></i>
-                    <i className="fa-solid fa-star text-yellow-400"></i>
-                    <i className="fa-solid fa-star text-yellow-400"></i>
-                    <i className="fa-solid fa-star text-yellow-400"></i>
-                    <i className="fa-solid fa-star text-yellow-400"></i>
+                    {ratings.map(rating=>(
+                        <i className="fa-solid fa-star text-yellow-400" key={rating}></i>
+                    ))}
                 </div>
-                <p>{data.count} review</p>
+                <p>{data.reviews_count} review</p>
             </div>
         </div>
-        <Link to={window.localStorage.getItem('token')?'/detail':'/login'} className='self-center'><button type='button'className='w-[200px] btn-orange'>Detail</button></Link>
+        <Link to={`/detail/${data.ID}`} className='self-center'><button type='button'className='w-[200px] btn-orange'>Detail</button></Link>
     </div>
   )
 }

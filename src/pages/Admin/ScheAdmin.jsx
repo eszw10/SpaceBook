@@ -12,11 +12,11 @@ const ScheAdmin = () => {
       </div>
       <div className="sign flex items-center justify-center gap-4">
         <img src="/assets/icons/warning.svg" alt="" />
-        <p>Klik jam baru untuk mencatat reservasi terbaru pelanggan</p>
+        <p className="font-semibold">Klik jam baru untuk mencatat reservasi terbaru pelanggan</p>
         <img src="/assets/icons/warning.svg" alt="" />
       </div>
       <form className="flex flex-col gap-5 justify-center items-center">
-          <div className="jadwal grid grid-cols-7 gap-5 bg-slate-40">
+          <div className="jadwal grid grid-cols-7 gap-4 bg-slate-40">
               {dates.map(date=>(
                 <Date data={date} key={date.id}/>
               ))}

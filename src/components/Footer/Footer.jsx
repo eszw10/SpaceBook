@@ -40,6 +40,20 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        <div className='md:hidden w-full bg-primary text-white p-5 flex flex-col gap-6'>
+            <Link to={'/'} className='relative -left-[10px]'><img src='/assets/icons/logo2.svg' alt="logo" className='h-[60px] ' width={170} /></Link>
+            <ul className='font-semibold flex flex-col gap-4'>
+                <li>Tentang</li>
+                <li>Produk</li>
+                <li>Bantuan</li>
+            </ul>
+            <div className="sosmed flex gap-3">
+                <img src='/assets/icons/instagram.svg' alt="" />
+                <img src='/assets/icons/facebook.svg' alt="" />
+                <img src='/assets/icons/linkedin.svg' alt="" />
+                <img src='/assets/icons/Whatsapp.svg' alt="" />
+            </div>
+        </div>
        <footer className='bg-primary-dark flex items-start justify-center py-5'>
         <p className='text-white text-center md:text-left'>Copyright @2023 SpaceBook All Rights Reserved.</p>
        </footer>

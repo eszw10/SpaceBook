@@ -1,11 +1,11 @@
 import Footer from "../../components/Footer/Footer"
 import NavDash from "../../components/Nav/NavDash"
-import Section1 from "./Pages/Section1"
-import Section2 from "./Pages/Section2"
-import Section3 from './Pages/Section3'
-import Section4 from "./Pages/Section4"
-import Section5 from "./Pages/Section5"
-import Section7 from "./Pages/Section7"
+import Section1 from "./Components/Section1"
+import Section2 from "./Components/Section2"
+import Section3 from './Components/Section3'
+import Section4 from "./Components/Section4"
+import Section5 from "./Components/Section5"
+import Section7 from "./Components/Section7"
 
 const Dashboard = () => {
   return (

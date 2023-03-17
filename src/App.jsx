@@ -6,7 +6,6 @@ import ProtectAdmin from './config/ProtectAdmin'
 import Protected from './config/Protected'
 import DashAdmin from './pages/Admin/DashAdmin'
 import Galeri from './pages/Admin/Galeri'
-import NavAdmin from './pages/Admin/NavAdmin'
 import ScheAdmin from './pages/Admin/ScheAdmin'
 import Detail from './pages/Detail/Detail'
 import Dashboard from './pages/Home/Dashboard'
@@ -21,10 +20,10 @@ function App() {
   return (
     <div className="app">
       <Routes>
+        <Route path='/cari' element={<Search/>}/>
+        <Route path='/detail/:id' element={<Detail/>}/>
         <Route element={<Protected/>}>
           <Route path='/dashboard' element={<Dashboard/>}/>
-          <Route path='/cari' element={<Search/>}/>
-          <Route path='/detail' element={<Detail/>}/>
         </Route>
         <Route element={<Auth/>}>
           <Route path='/' element={<Home/>}/>

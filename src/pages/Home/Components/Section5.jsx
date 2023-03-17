@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Contact from '../../../components/Modal/Contact'
+import ContactUs from '../../../components/Modal/ContactUs'
 import '../Home.css'
 
 const Section5 = () => {
     const [modal,setModal] = useState(false);
     const modalHandler= () => setModal(!modal)
   return (
-    <section className='md:mt-0 mt-20 mb-20 lg:mb-32 md:h-[50vh] flex relative' id='add'>
+    <div className='md:mt-0 mt-20 mb-20 lg:mb-32 md:h-[50vh] flex relative' id='add'>
         <div className="md:container md:self-center mx-auto bagan flex items-center md:justify-around md:w-[70%] rounded-[20px] p-5 md:p-0 ">
             <div className="content flex flex-col items-center justify-center text-center md:text-left gap-3">
                 <div className="typo">
@@ -19,8 +19,8 @@ const Section5 = () => {
             </div>
             <img src='/assets/images/Brazuca.png' alt="" className='hidden md:block' />
         </div>
-        {modal && <Contact handler={modalHandler}/>}
-    </section>
+        {modal && <ContactUs handler={modalHandler}/>}
+    </div>
   )
 }
 

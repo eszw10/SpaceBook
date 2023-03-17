@@ -1,17 +1,25 @@
-const Comment = ({data}) => {
+import { useEffect, useState } from "react";
+
+const Comment = ({data,rate}) => {
+  const [ratings,SetRatings] = useState([]);
+  useEffect(()=> {
+    const arr = []
+    for(let i = 1;i<rate+1;i++) {
+      arr.push(i)
+      SetRatings(arr)
+    }
+  },[])
   return (
     <div className="flex gap-3 items-center">
-      <img src={data.image} className="self-center w-[61px]" />
+      <img src='/assets/images/user.png' className="self-center w-[61px]" />
       <div className="rate">
-        <h3 className="font-medium text-xl">{data.name}</h3>
+        <h3 className="font-medium text-lg md:text-xl">{data.name}</h3>
         <div className="rating">
-          <i className="fa-solid fa-star text-yellow-400"></i>
-          <i className="fa-solid fa-star text-yellow-400"></i>
-          <i className="fa-solid fa-star text-yellow-400"></i>
-          <i className="fa-solid fa-star text-yellow-400"></i>
-          <i className="fa-solid fa-star text-yellow-400"></i>
+          {ratings.map(rating => (
+             <i className="fa-solid fa-star text-yellow-400" key={rating}></i>
+          ))}
         </div>
-        <p className="w-[60%]">{data.comment}</p>
+        <p className="w-[90%] md:w-[60%] text-sm md:text-base">{data.comment}</p>
       </div>
     </div>
   )

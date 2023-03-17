@@ -1,9 +1,13 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios";
+import ApiURL from "../../config/ApiUrl";
 
 const NavAdmin = () => {    
     const [idx,setIdx] = useState(1);
     const navigate = useNavigate();
+    const [data,setData] = useState();
+    const [loading,setLoading] = useState(true);
     const handleLogOut = () => {
         window.localStorage.removeItem('AdminToken')
         navigate('/admin')
@@ -18,6 +22,33 @@ const NavAdmin = () => {
         }
         return style
     }
+
+    const getData= ()=> {
+        setLoading(true)
+        axios.get(`${ApiURL()}/owner/spaces`, {
+            headers: {
+                Authorization:`Bearer ${window.localStorage.getItem('AdminToken')}`
+            }
+        })
+        .then(res=> {
+            console.log(res)
+            setData(res.data.data)
+            setLoading(false)})
+        .catch(err=>console.log(err))
+      }
+    
+      useEffect(()=> {
+        getData()
+      },[])
+
+    if(loading) {
+    return (
+        <div className="w-screen h-screen flex items-center justify-center">
+            <div className="justify-self-center loader ease-linear rounded-full border-8 border-t-8 border-secondary-h h-32 w-32"></div>
+        </div>
+        )
+    }
+
   return (
     <div className="flex text-white">
         <nav className="bg-primary w-[20vw] h-screen px-12 py-24 flex flex-col gap-20">
@@ -42,7 +73,7 @@ const NavAdmin = () => {
             </div>
         </nav>
         <div className="content w-full h-screen text-black">
-            <Outlet/>
+            <Outlet context={data}/>
         </div>
     </div>
   )
