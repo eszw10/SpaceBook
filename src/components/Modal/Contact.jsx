@@ -8,7 +8,7 @@ const Contact = ({data, nomor, handler, jam, tanggal, hari}) => {
             <img src="/assets/images/WA.png" className="w-[100px] lg:w-[219px]" />
             <p>{nomor}</p>
             <p>{data.nama}</p>
-            <a href={`https://wa.me/${nomor}?text=Halo!%20saya%20ingin%20booking%20pada%20hari%20${hari}%20tanggal%20${tanggal}%20jam%20${jam}`} target='_blank' className="btn-orange self-center">Hubungi Admin</a>
+            <a href={`https://wa.me/${nomor}?text=Halo!%20saya%20ingin%20booking%20pada%20hari%20${hari}%20tanggal%20${tanggal}%20jam%20${jam}`} target='_blank' className="btn-orange self-center">Hubungi Tempat</a>
         </div>
     </div>
   )
