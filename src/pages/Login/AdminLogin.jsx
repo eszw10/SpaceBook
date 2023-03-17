@@ -1,7 +1,7 @@
 import './Login.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ApiURL from '../../config/ApiUrl'
+import { ApiURL } from '../../config/ApiUrl'
 import axios from 'axios'
 
 const AdminLogin = () => {
@@ -17,10 +17,9 @@ const AdminLogin = () => {
       "password" : password
     })
     .then(res=>{
-      console.log(res)
       window.localStorage.setItem('AdminToken',res.data.data.token)
       navigate('/admin/dashboard')
-    }).catch(err=> console.log(err));
+    }).catch();
   }
 
   return (

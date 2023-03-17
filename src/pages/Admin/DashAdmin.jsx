@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useOutletContext } from 'react-router-dom';
 import EditFacility from '../../components/Modal/EditFacility';
 import EditPrice from '../../components/Modal/EditPrice';
-import ApiURL from '../../config/ApiUrl';
 
 const DashAdmin = () => {
   const [show,setShow] = useState(false);
@@ -22,11 +21,11 @@ const DashAdmin = () => {
           <h2 className='font-semibold text-2xl'>Harga</h2>
           <img src="/assets/icons/edit.svg" alt="" onClick={editHandler} className="cursor-pointer"/>
         </header>
-        <div className="list flex justify-between w-[30%]">
+        <div className="list flex justify-between w-[40%]">
           <p>Coworking Space</p>
           <p>Rp {data.spaces[0].harga} /Jam</p>
         </div>
-        <div className="list flex justify-between w-[30%]">
+        <div className="list flex justify-between w-[40%]">
           <p>Meeting Room</p>
           <p>Rp {data.spaces[1].harga} /Jam</p>
         </div>
@@ -40,11 +39,11 @@ const DashAdmin = () => {
       </div>
       <div className="jam mb-4">
         <h2 className='font-semibold text-2xl mb-4'>Jam Buka dan Kapasitas</h2>
-        <div className="contain flex justify-between w-[25%]">
+        <div className="contain flex justify-between w-[40%]">
           <div className="container1">
             <div className="list flex gap-3">
               <i className="fa-regular fa-clock text-secondary"></i>
-              <p>Mon-Fir</p>
+              <p>Senin-Jumat</p>
             </div>
             <div className="list flex gap-2">
               <i className="fa-solid fa-user-group text-secondary"></i>
@@ -52,7 +51,7 @@ const DashAdmin = () => {
             </div>
           </div>
           <div className="container2">
-            <p>7am - 6pm</p>
+            <p>07.00 - 18.00</p>
             <p>{data.spaces[0].kapasitas} orang</p>
           </div>
         </div>
@@ -63,14 +62,13 @@ const DashAdmin = () => {
           <img src="/assets/icons/edit.svg" alt="" onClick={showHandler} className="cursor-pointer"/>
         </header>
         <ul className='font-semibold flex gap-6 text-lg'>
-          <li>Wifi</li>
-          <li>Proyektor</li>
-          <li>Snack</li>
-          <li>Mushalla</li>
+          {data.owner.general_facilities.map(fasil=> (
+            <li key={fasil.ID}>{fasil.ket}</li>
+          ))}
         </ul>
       </div>
-      {edit && <EditPrice handler ={editHandler}/>}
-      {show && <EditFacility handler ={showHandler}/>}
+      {edit && <EditPrice handler ={editHandler} data={data}/>}
+      {show && <EditFacility handler ={showHandler} data={data.owner.general_facilities}/>}
     </div>
   )
 }

@@ -6,14 +6,14 @@ const Part3 = ({data}) => {
         <div className="fasil flex flex-col md:flex-row justify-between md:items-center gap-3 md:gap-0">
             <div className="fal1 flex flex-col gap-2 self-start">
                 <h2 className='font-semibold text-2xl md:text-3xl'>Harga</h2>
-                <p>Rp {data.harga}/h</p>
+                <p>Rp {data.harga} /Jam</p>
             </div>
             <div className="fal2 flex flex-col gap-2 md:self-start">
-                <h2 className='font-semibold text-2xl md:text-3xl'>Opening Hours</h2>
-                <p>Mon-Fri</p>
+                <h2 className='font-semibold text-2xl md:text-3xl'>Jam Operasional</h2>
+                <p>Senin-Jumat</p>
                 <div className="time flex gap-3 items-center md:self-start">
                     <i className="fa-regular fa-clock text-secondary"></i>
-                    <p>7am-6pm</p>
+                    <p>07.00 - 18.00</p>
                 </div>
             </div>
             <div className="fal3 flex flex-col gap-4 md:self-start">
@@ -24,7 +24,7 @@ const Part3 = ({data}) => {
             <h2 className="font-semibold text-2xl md:text-3xl">Fasilitas</h2>
                 <ul>
                     {data.facilities.map(fasil => (
-                        <li>{fasil.ket}</li>
+                        <li key={fasil.ID}>{fasil.ket}</li>
                     ))}
                 </ul>
             </div>

@@ -1,4 +1,12 @@
-const url = 'https://arvin.aenzt.tech'
-export default function ApiURL() {
-    return url;
+function ApiURL() {
+    return 'https://arvin.aenzt.tech';
 }
+
+function userToken() {
+    return `Bearer ${window.localStorage.getItem('token')}`
+}
+
+function adminToken() {
+    return `Bearer ${window.localStorage.getItem('AdminToken')}`
+}
+export {ApiURL, userToken, adminToken}

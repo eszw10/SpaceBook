@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Card from '../../../components/Card/Card'
-import ApiURL from '../../../config/ApiUrl';
+import { ApiURL } from '../../../config/ApiUrl';
 
 const Section2 = () => {
   const [spaces,setSpaces] = useState([]);
@@ -11,12 +11,11 @@ const Section2 = () => {
   const getSpaces = ()=> {
     setLoading(true)
     axios.get(`${ApiURL()}/spaces?limit=3&page=2`)
-    .then(res => {console.log(res)
+    .then(res => {
     setSpaces(res.data.data)
     setLoading(false);
     })
     .catch(err=> {
-      console.log(err)
       setLoading(false)
       setError(err.message)
     })

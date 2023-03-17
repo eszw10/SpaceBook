@@ -12,14 +12,14 @@ const Comment = ({data,rate}) => {
   return (
     <div className="flex gap-3 items-center">
       <img src='/assets/images/user.png' className="self-center w-[61px]" />
-      <div className="rate">
-        <h3 className="font-medium text-lg md:text-xl">{data.name}</h3>
+      <div className="rate w-[50vw]">
+        <h3 className="font-medium text-lg md:text-xl">{data.nama}</h3>
         <div className="rating">
           {ratings.map(rating => (
              <i className="fa-solid fa-star text-yellow-400" key={rating}></i>
           ))}
         </div>
-        <p className="w-[90%] md:w-[60%] text-sm md:text-base">{data.comment}</p>
+        <p className="w-[90%] md:w-[60%] text-sm md:text-base">{data.ulasan}</p>
       </div>
     </div>
   )

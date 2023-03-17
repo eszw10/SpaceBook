@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import ApiURL from '../../config/ApiUrl';
+import { ApiURL, userToken } from '../../config/ApiUrl';
 
 const Rating = ({handler,data}) => {
   const [ratingku,setRating] = useState('')
@@ -10,19 +10,17 @@ const Rating = ({handler,data}) => {
 
   const handleSubmit= (e) => {
     e.preventDefault();
-    console.log(ulasanku,ratingku);
     axios.post(`${ApiURL()}/space/${data.ID}/review`,{
       ulasan : ulasanku,
       rating : ratingku
     },{
       headers: {
-        Authorization:`Bearer ${window.localStorage.getItem('token')}`
+        Authorization: userToken()
       }
-    }).then(res=>{
-      console.log(res)
+    }).then(()=>{
       navigate(0)
     })
-    .catch(err=>console.log(err))
+    .catch()
   }
 
   return (

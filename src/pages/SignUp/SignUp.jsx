@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import ApiUrl from "../../config/ApiUrl";
+import { ApiURL } from "../../config/ApiUrl";
 
 const SignUp = () => {
   const [seen, setSeen] = useState(false);
@@ -14,16 +14,15 @@ const SignUp = () => {
 
   const handleRegister = (e)=> {
     e.preventDefault();
-    axios.post(`${ApiUrl()}/register/customer`, {
+    axios.post(`${ApiURL()}/register/customer`, {
       "nama" : name,
       "email" : email,
       "password" : password,
       "konfirmpw" : confirmPassword
     })
     .then(res=>{
-      console.log(res)
       navigate('/login')
-    }).catch(err=> console.log(err));
+    }).catch();
   }
 
 

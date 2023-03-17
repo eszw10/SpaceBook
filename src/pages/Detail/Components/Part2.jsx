@@ -1,25 +1,35 @@
-import dates from "../../../data/dates"
-import times from "../../../data/times"
 import Date from "../../../components/Schedule/Date"
 import Time from "../../../components/Schedule/Time"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Check from "../../../components/Modal/Check"
 
-const Part2 = () => {
+const Part2 = ({data}) => {
   const [modal,setModal] = useState(false);
+  const [date,setDate] = useState({pilihan:[]})
+  const [times,setTimes] = useState({options:[]})
+  const [jam,setJam] = useState('');
+  const [tanggal,setTanggal] = useState('');
+  const [hari,setHari] = useState('');
   const modalHandler= (e) => {
     e.preventDefault();
     setModal(!modal)
   }
+
+  useEffect(()=>{
+    setDate(data)
+    setTimes(data.space)
+  },[data])
   return (
     <div className="flex flex-col justify-center items-center gap-4 lg:mt-20">
         <form className="flex flex-col gap-5">
           <div className="jadwal md:overflow-hidden grid grid-cols-7 gap-2 md:gap-6 md:gap-x-9">
-              {dates.map(date=>(
-                <Date data={date} key={date.id}/>
+              {date.pilihan.slice(0,7).map(hari=>(
+                <Date data={hari} key={hari.ID}/>
               ))}
-              {times.map(time=>(
-                <Time data={time} key={time.id}/>
+              {date.pilihan.map(date=>(
+                <div className="grid grid-rows-7 gap-4" key={date.ID}>
+                <Time date={date} options={times.options}  jam={setJam} tanggal={setTanggal} hari={setHari}/>
+              </div>
               ))}
           </div>
           <div className="sign flex gap-5">
@@ -30,7 +40,7 @@ const Part2 = () => {
           </div>
           <button type="submit" className="self-center btn-orange w-[357px]" onClick={modalHandler}>Reservasi</button>
         </form>
-        {modal && <Check handler={modalHandler}/>}
+        {modal && <Check handler={modalHandler} data={data.space} nomor={data.telp} jam={jam} tanggal={tanggal} hari={hari}/>}
     </div>
   )
 }

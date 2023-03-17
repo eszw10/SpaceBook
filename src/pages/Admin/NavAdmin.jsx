@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios";
-import ApiURL from "../../config/ApiUrl";
+import { ApiURL, adminToken } from "../../config/ApiUrl";
 
 const NavAdmin = () => {    
     const [idx,setIdx] = useState(1);
@@ -27,14 +27,13 @@ const NavAdmin = () => {
         setLoading(true)
         axios.get(`${ApiURL()}/owner/spaces`, {
             headers: {
-                Authorization:`Bearer ${window.localStorage.getItem('AdminToken')}`
+                Authorization: adminToken()
             }
         })
         .then(res=> {
-            console.log(res)
             setData(res.data.data)
             setLoading(false)})
-        .catch(err=>console.log(err))
+        .catch()
       }
     
       useEffect(()=> {

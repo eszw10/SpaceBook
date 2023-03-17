@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import Footer from "../../components/Footer/Footer"
 import Nav from "../../components/Nav/Nav"
 import NavDash from "../../components/Nav/NavDash"
-import ApiURL from "../../config/ApiUrl"
+import { ApiURL } from "../../config/ApiUrl"
 import Part1 from "./Components/Part1"
 import Part2 from "./Components/Part2"
 import Part3 from "./Components/Part3"
@@ -14,16 +14,15 @@ const Detail = () => {
   const [data,setData] = useState();
   const { id } = useParams();
   const [loading,setLoading] = useState(true)
-  
+
 
   const getDetail= () => {
     axios.get(`${ApiURL()}/space/${id}`)
     .then(res=>{
-      console.log(res)
-      setData(res.data.data.space)
+      setData(res.data.data)
       setLoading(false)
     })
-    .catch(err=>console.log(err))
+    .catch()
   }
   
   useEffect(()=> {
@@ -42,9 +41,9 @@ const Detail = () => {
     <div className="flex flex-col gap-10">
         {window.localStorage.getItem('token')?<NavDash/>:<Nav/>}
         <Part1 data={data}/>
-        <Part2/>
-        <Part3 data={data}/>
-        <Part4 data={data}/>
+        <Part2 data={data}/>
+        <Part3 data={data.space}/>
+        <Part4 review={data.reviews}/>
         <Footer/>
     </div>
   )

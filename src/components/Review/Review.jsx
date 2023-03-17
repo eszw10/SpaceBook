@@ -18,7 +18,7 @@ const Review = ({data}) => {
              </div>
         </div>
         <p className='text-black w-[60%]'>
-                {data.content}
+          {data.content}
         </p>
     </div>
   )

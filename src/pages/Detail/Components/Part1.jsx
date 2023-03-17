@@ -10,10 +10,12 @@ const Part1 = ({data}) => {
                 <p className="font-semibold text-lg md:text-2xl">Back</p>
             </div>
             <div className="scrollbar img-container flex items-center gap-4 overflow-x-scroll md:overflow-hidden h-[250px]">
-                <img src={data.foto} alt="" className="w-[350px]"/>
+                {data.pictures && data.pictures.map((pic,index)=>(
+                  <img src={pic} alt="" className="w-[350px]" key={index}/>
+                ))}
             </div>
-            <h1 className="font-semibold text-2xl md:text-4xl">{data.nama}</h1>
-            <p className="font-medium text-lg">{data.kategori=='coworking'?'Coworking Space':'Meeting Room'}</p>
+            <h1 className="font-semibold text-2xl md:text-4xl">{data.space.nama}</h1>
+            <p className="font-medium text-lg">{data.space.kategori=='coworking'?'Coworking Space':'Meeting Room'}</p>
         </div>
     </div>
   )

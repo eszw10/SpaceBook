@@ -6,7 +6,7 @@ const Section4 = () => {
             <div className="typography text-white flex flex-col md:gap-8 gap-4 justify-evenly lg:items-start items-center lg:w-[90%]">
               <img src='/assets/icons/logo2.svg' className="hidden md:block md:w-[170px]" />
               <h2 className='font-semibold text-lg md:text-xl lg:text-4xl lg:w-10/12'>Apa itu SpaceBook</h2>
-              <p className='lg:text-xl lg:w-[80%] text-sm'>SpaceBook adalah platform yang menyediakan informasi lengkap mengenai Coworking Space dan membantu pengguna untuk memesan tempat lebih cepat</p>
+              <p className='lg:text-xl lg:w-[80%] text-sm'>SpaceBook adalah platform yang menyediakan informasi coworking space/meeting room terlengkap dan membantu reservasi ruangan menjadi lebih mudah</p>
             </div>
         </div>
     </div>

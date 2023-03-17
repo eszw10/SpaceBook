@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import { useState } from 'react'
-import ApiURL from '../../config/ApiUrl'
+import { ApiURL } from '../../config/ApiUrl'
 import axios from 'axios'
 
 const Login = () => {
@@ -17,10 +17,9 @@ const Login = () => {
       "password" : password
     })
     .then(res=>{
-      console.log(res)
       window.localStorage.setItem('token', res.data.data.token)
       navigate('/dashboard')
-    }).catch(err=> console.log(err));
+    }).catch();
   }
 
   return (

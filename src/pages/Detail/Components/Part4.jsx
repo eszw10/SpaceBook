@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import Rating from "../../../components/Modal/Rating";
 import Comment from "../../../components/Review/Comment"
-import comments from "../../../data/comments"
 
-const Part4 = ({data}) => {
+const Part4 = ({review}) => {
     const [modal,setModal] = useState(false);
     const modalHandler= () => setModal(!modal)
   return (
@@ -14,12 +14,13 @@ const Part4 = ({data}) => {
                 <img src="/assets/icons/add.svg" alt="" className="cursor-pointer w-[30px]" onClick={modalHandler}/>
             </div>
             <div className="review flex flex-col gap-3">
-                {comments.map(comment=> (
-                    <Comment data={comment} key={comment.id} rate={data.rating}/>
+                {review.map(comment=> (
+                    <Comment data={comment} key={comment.ID} rate={comment.rating}/>
                 ))}
             </div>
         </div>
-        {modal && <Rating handler={modalHandler} data={data}/>}
+        {(modal && window.localStorage.getItem('token')) && <Rating handler={modalHandler} data={review}/>}
+        {(modal && !window.localStorage.getItem('token')) && <Navigate to={'/login'}/>}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../../../components/Card/Card"
-import ApiURL from "../../../config/ApiUrl";
+import { ApiURL } from "../../../config/ApiUrl";
 
 const Bagian2 = () => {
     const [spaces,setSpaces] = useState([]);
@@ -11,7 +11,7 @@ const Bagian2 = () => {
     const [filtered,setFiltered] = useState('');
     const [result,setResult] = useState(0);
     const [error,setError] = useState('')
-    let theLink = ''
+    const [search,setSearch] = useState('');
 
     const idxStyle = id => {
         let style = 'btn-orange-outline'
@@ -21,11 +21,19 @@ const Bagian2 = () => {
         return style
     }
 
+    const handler = (filter)=> {
+        if(filtered){
+            setFiltered('')
+        } else {
+            setFiltered(filter)
+        }
+    }
+
   const getSpaces = ()=> {
     setLoading(true)
-    filtered? theLink =`${ApiURL()}spaces/find?kategori=${filtered}&limit=&page=${index}` : theLink=`${ApiURL()}/spaces?limit=&page=${index}`
+    let theLink = filtered||search? `${ApiURL()}/spaces/find?kategori=${filtered}&search=${search}&limit=&page=${index}` : `${ApiURL()}/spaces?limit=&page=${index}`
     axios.get(theLink)
-    .then(res => {console.log(res)
+    .then(res => {
     setSpaces(res.data.data)
     setResult(res.data.pagination.current_elements)
     const arr = []
@@ -36,7 +44,6 @@ const Bagian2 = () => {
     setLoading(false)
     })
     .catch(err=> {
-        console.log(err)
         setLoading(false)
         setError(err.message)
     })
@@ -44,7 +51,7 @@ const Bagian2 = () => {
 
   useEffect(()=> {
     getSpaces();
-  },[index,filtered])
+  },[index,filtered,search])
   return (
     <div className="mt-14 flex flex-col items-center md:block">
         <div className="contain mx-auto md:mx-20 flex flex-col gap-14">
@@ -53,12 +60,12 @@ const Bagian2 = () => {
                 <p>Menampilkan {result} hasil</p>
                 <div className="buttons flex flex-col items-center justify-between mt-5 md:pr-8 md:flex-row gap-4 md:gap-0">
                     <div className="filter flex gap-5">
-                        <button type="button" className="btn-orange-outline" onClick={()=>setFiltered('coworking')}>Coworking</button>
-                        <button type="button" className="btn-orange-outline" onClick={()=>setFiltered('meeting room')}>Meeting Room</button>
+                        <button type="button" className="btn-orange-outline" onClick={()=>handler('coworking')}>Coworking</button>
+                        <button type="button" className="btn-orange-outline" onClick={()=>handler('meeting room')}>Meeting Room</button>
                     </div>
                     <div className="w-full md:w-[268px] border-2 border-solid rounded-[10px] px-4 py-[10px] flex gap-4 items-center border-black">
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="search" className="outline-none"/>
+                        <input type="text" placeholder="search" value={search} onChange={e=>setSearch(e.target.value)} className="outline-none"/>
                     </div>
                 </div>
             </div>
@@ -69,8 +76,8 @@ const Bagian2 = () => {
                     <Card data={card} key={card.ID}/>
                 ))}
                 <div className="pagination self-center flex gap-7 justify-center items-center col-span-full">
-                    {pages.map(page=>(  
-                        <button type="button" className={idxStyle(page)} onClick={()=>setIndex(page)}>{page}</button>
+                    {pages.map((page,index)=>(  
+                        <button key={index} type="button" className={idxStyle(page)} onClick={()=>setIndex(page)}>{page}</button>
                     ))}
                 </div>
             </div>}
