@@ -9,7 +9,7 @@ const Time = ({date,options,category,jam,tanggal,hari}) => {
   const idxStyle = () => {
     let style = 'bg-success hover:border-success hover:bg-grey-f hover:border-2 hover:text-black text-white'
     if(clicked && !window.localStorage.getItem('AdminToken')) {
-        style += 'text-black border-success bg-grey-f border-2'
+        style = 'text-black border-success bg-grey-f border-2'
     }
     return style
   }
